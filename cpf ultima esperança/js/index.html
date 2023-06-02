@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="../styles.css">
+     <title>Validar CPF</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Validar CPF </h2>
+        <input type="text" placeholder=" Digite o CPF " id="campo" class="entry" maxlength="14" onkeyup="mascara_cpf()"/>
+        <button  type=" submit" id="button" onclick="validaCpf()">Verificar </button>
+        <h3 id="result"> </h3>
+    </div>
+    <script>
+        function mascara_cpf(){
+            var cpf = document.getElementById('campo')
+            if(cpf.value.length ==3 || cpf.value.length == 7){
+                cpf.value += "."
+            } else if(cpf.value.length == 11) {
+                cpf.value += "-"
+            }
+        }
+    </script>
+    <script type="text/javascript" src="js/ValidaCPF.js"> </script>
+</body>
+</html>
